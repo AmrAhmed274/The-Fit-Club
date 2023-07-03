@@ -3,6 +3,7 @@ import { testimonialsData } from '../../data/testimonialsData';
 import leftArrow from '../../assets/leftArrow.png';
 import rightArrow from '../../assets/rightArrow.png';
 
+import { motion } from 'framer-motion';
 
 import './Testimonials.css';
 
@@ -27,6 +28,9 @@ const Testimonials = () => {
         }
     };
 
+    // A variable for animation styling purpose
+    const transition = { type: 'spring', duration: 3 };
+
     return (
         <div className='testimonials'>
 
@@ -43,18 +47,49 @@ const Testimonials = () => {
                     </span>
                 </h5>
 
-                <p className='testimonial-review'>{testimonialsData[selectedReviewer].review}</p>
+                <motion.p 
+                    className='testimonial-review'
+                    key={selectedReviewer}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 100 }}
+                    transition={transition}
+                >{testimonialsData[selectedReviewer].review}</motion.p>
                 <p><span>{testimonialsData[selectedReviewer].name}</span> - {testimonialsData[selectedReviewer].status}</p>
+
             </div>
             
             <div className='right-testimonials'>
-                <div id='stylingPurpose-border'></div>
-                <div id='stylingPurpose-card'></div>
-                <img src={testimonialsData[selectedReviewer].image} alt="the reviewer" className='reviewer'/>
+
+                <motion.div
+                    id='stylingPurpose-border'
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ ...transition, duration: 2 }}
+                />
+                <motion.div
+                    id='stylingPurpose-card'
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ ...transition, duration: 2 }}
+                />
+
+                <motion.img 
+                    src={testimonialsData[selectedReviewer].image} 
+                    alt="the reviewer" 
+                    className='reviewer'
+                    key={selectedReviewer}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={transition}
+                />
+
                 <div className='arrows'>
                     <img src={leftArrow} alt="left arrow" onClick={prevTestimonial} />
                     <img src={rightArrow} alt="right arrow" onClick={nextTestimonial} />
                 </div>
+
             </div>
         </div>
     );
