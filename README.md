@@ -2,7 +2,7 @@
 
 ## A landing page gym app for shaping your ideal body
 
-This is a landing page with nice UI and animation, things used in this project:
+This is a landing page with nice UI and animation, things used in this project ([The Fit Club](https://fitclub-3wm.pages.dev/)):
 
 1. React framework
 2. Responsive web design
