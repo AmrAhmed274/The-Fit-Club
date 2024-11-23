@@ -55,6 +55,8 @@
     font-weight: bold;
     color: #fff;
     text-overflow: inherit;
+    flex-wrap: wrap;
+
 }
 
 .hero-text>span {
@@ -163,7 +165,7 @@
     background-color: var(--caloryCard);
     border-radius: .5rem;
     padding: 1rem;
-    width: 15rem;
+    width: 14.7rem;
     position: absolute;
     top: 33rem;
     right: 28rem;
@@ -192,4 +194,98 @@
     width: 22rem;
     height: 30rem;
     left: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-blur {
+        width: 14rem;
+    }
+
+    .the-best-ad {
+        margin-top: 0;
+        font-size: small;
+        align-self: center;
+        transform: scale(0.8);
+    }
+
+    .hero-text {
+        font-size: xx-large;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-text-description {
+        font-size: small;
+        font-weight: 200;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .figures {
+        justify-content: center;
+    }
+
+    .figure-item-statistic {
+        font-size: large;
+    }
+
+    .figure-item-title {
+        font-size: small;
+    }
+
+    .right-hero {
+        position: relative;
+        background: none;
+    }
+
+    .heart-rate {
+        left: .5rem;
+        top: 2rem;
+    }
+
+    .heart-rate-number {
+        font-size: 1.4rem;
+    }
+
+    .calories {
+        position: relative;
+        top: 5rem;
+        left: 2rem;
+        width: 13rem;
+    }
+
+    .calories-img {
+        width: 2rem;
+    }
+
+    .calories-text {
+        font-size: .9rem;
+    }
+
+    .calories-text-number {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        position: relative;
+        width: 15rem;
+        left: 6rem;
+        top: 4rem;
+        align-self: center;
+    }
+
+    .hero-image-back {
+        width: 15rem;
+        left: 2rem;
+        top: 0;
+    }
 }

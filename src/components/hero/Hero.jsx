@@ -5,13 +5,14 @@ import HeroImage from '../../assets/hero_image.png';
 import HeroImageBack from '../../assets/hero_image_back.png';
 import Heart from '../../assets/heart.png';
 import Calories from '../../assets/calories.png';
+import NumberCounter from 'number-counter';
 
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-    // A variable for animation styling purpose
+    // Variables for animation styling purpose
     const transition = { type: 'spring', duration: 3 };
-
+    const mobile = window.innerWidth <= 768 ? true : false;
     return (
         <div className="hero">
             <div className='blur hero-blur' />
@@ -20,7 +21,7 @@ const Hero = () => {
 
                 <div className='the-best-ad'>
                     <motion.div 
-                        initial={{left: '238px'}}
+                        initial={{left: mobile ? '165px' : '238px'}}
                         whileInView={{left: '8px'}}
                         transition={{...transition, type: 'tween'}}
                     />
@@ -35,15 +36,21 @@ const Hero = () => {
 
                 <div className='figures'>
                     <div className='figure-item'>
-                        <span className='figure-item-statistic'>+140</span>
+                        <span className='figure-item-statistic'>
+                            <NumberCounter end={140} start={100} delay='4' preFix='+'/>
+                        </span>
                         <span className='figure-item-title'>Expert coachs</span>
                     </div>
                     <div className='figure-item'>
-                        <span className='figure-item-statistic'>+978</span>
+                        <span className='figure-item-statistic'>
+                            <NumberCounter end={978} start={800} delay='4' preFix='+'/>
+                        </span>
                         <span className='figure-item-title'>Members joined</span>
                     </div>
                     <div className='figure-item'>
-                        <span className='figure-item-statistic'>+50</span>
+                        <span className='figure-item-statistic'>
+                            <NumberCounter end={50} start={0} delay='4' preFix='+'/>
+                        </span>
                         <span className='figure-item-title'>Fitness programs</span>
                     </div>
                 </div>

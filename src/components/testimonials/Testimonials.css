@@ -87,3 +87,38 @@ p span {
     width: 1.5rem;
     cursor: pointer;
 }
+
+@media  screen and (max-width: 768px) {
+    .testimonials {
+        flex-direction: column;
+    }
+
+    .right-testimonials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        position: relative;
+    }
+
+    #stylingPurpose-border,
+    #stylingPurpose-card {
+        position: relative;
+        display: none;
+    }
+    
+    .reviewer {
+        top: 0;
+        left: 0;
+        position: relative;
+        align-self: center;
+    }
+
+    .arrows {
+        position: absolute;
+        bottom: -3.5rem;
+        left: 8.3rem;
+        
+    }
+}
